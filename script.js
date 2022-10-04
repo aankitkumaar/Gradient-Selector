@@ -25,8 +25,8 @@ window.onload = ()=>{ //after window loaded
   }
 }
 
-var color1 = document.querySelector(".color1");
-var color2 = document.querySelector(".color2");
+var color1 = document.querySelector(".color11");
+var color2 = document.querySelector(".color12");
 var box = document.getElementById("box");
 function Gradient() {
  box.style.background = 
@@ -46,7 +46,6 @@ color2.addEventListener("input", Gradient);
 //   color12.select();
 //   let color12Value = color1.value;
 //   navigator.clipboard.writeText(`linear-gradient( ${color11Value},${color12Value})`);
- 
 // }
 
 function createHex() {
