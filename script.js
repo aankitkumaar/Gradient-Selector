@@ -1,13 +1,12 @@
-//selecting all required elements
 const filterItem = document.querySelector(".items");
 const filterImg = document.querySelectorAll(".gallery .image");
 
-window.onload = ()=>{ //after window loaded
-  filterItem.onclick = (selectedItem)=>{ //if user click on filterItem div
-    if(selectedItem.target.classList.contains("item")){ //if user selected item has .item class
-      filterItem.querySelector(".active").classList.remove("active"); //remove the active class which is in first item
-      selectedItem.target.classList.add("active"); //add that active class on user selected item
-      let filterName = selectedItem.target.getAttribute("data-name"); //getting data-name value of user selected item and store in a filtername variable
+window.onload = ()=>{ 
+  filterItem.onclick = (selectedItem)=>{ 
+    if(selectedItem.target.classList.contains("item")){ 
+      filterItem.querySelector(".active").classList.remove("active"); 
+      selectedItem.target.classList.add("active"); 
+      let filterName = selectedItem.target.getAttribute("data-name"); 
       filterImg.forEach((image) => {
         let filterImges = image.getAttribute("data-name"); 
         if((filterImges == filterName) || (filterName == "all")){
@@ -39,14 +38,14 @@ function Gradient() {
 color1.addEventListener("input", Gradient);
 color2.addEventListener("input", Gradient);
 
-
-// function gradbox(){
-//   color11.select();
-//   let color11Value = color1.value;
-//   color12.select();
-//   let color12Value = color1.value;
-//   navigator.clipboard.writeText(`linear-gradient( ${color11Value},${color12Value})`);
-// }
+function gradbox(){
+  color1.select();
+  let color11Value = color1.value;
+  color1.select();
+  let color12Value = color2.value;
+  navigator.clipboard.writeText(`linear-gradient(to right, ${color11Value}, ${color12Value});`);
+  alert(`linear-gradient(to right, ${color11Value}, ${color12Value});`);
+}
 
 function createHex() {
   var hexCode1 = "";
@@ -66,3 +65,43 @@ function generate() {
 }
 document.onload = generate();
 
+// const data = [
+//   {
+//     color1:"#B8A2C1",
+//     color2:"#BdA5C1"
+//   },
+//   {
+//     color1:"#B8A2C1",
+//     color2:"#BdA5C1"
+//   },
+//   {
+//     color1:"#B8A2C1",
+//     color2:"#BdA5C1"
+//   },
+//   {
+//     color1:"#B8A2C1",
+//     color2:"#BdA5C1"
+//   },
+//   {
+//     color1:"#B8A2C1",
+//     color2:"#BdA5C1"
+//   },
+//   {
+//     color1:"#B8A2C1",
+//     color2:"#BdA5C1"
+//   },
+//   {
+//     color1:"#B8A2C1",
+//     color2:"#BdA5C1"
+//   },
+// ]
+
+// data.map(() => {
+    
+// <div class="image" data-name="left"><span><div id="box" class="box1" style="background: linear-gradient(to right, #A2C1BB , #B8A2C1); "></div></span>
+// <div class="inputcolor">
+// <input class="color11" type="color" name="color1" value="#A2C1BB">
+// <input class="color12" type="color" name="color2" value="#B8A2C1">
+// <button onclick="gradbox()">Copy</button>
+// </div>
+//   })

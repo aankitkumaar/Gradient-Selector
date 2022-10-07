@@ -1,12 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
+body
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+.content
+{
+  margin-top: 40px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
 
+.content .text
+{
+  position: relative ;
+  color: #fff;
+  font-weight: 600;
+  font-size: 45px;
+  text-transform: uppercase;
+  transform: scale(2);
+  letter-spacing: 2px;
+  padding: 30px;
+}
 :root
 {
   --gradient: linear-gradient(
@@ -53,15 +73,10 @@
   top: 15%;
 
 }
-::selection{
-  color: #fff;
-  background: #007bff;
-}
 body{
   padding: 10px;
-  background-image: url(/background.jpg) ;
+  background-image: var(--gradient) ;
   background-size: 200%;
-  background-repeat:var(--gradient);
   animation: bg-animation 30s infinite;
 }
 
@@ -75,7 +90,7 @@ body{
   }
 }
 .wrapper{
-  margin: 100px auto;
+  margin: 50px auto;
   max-width: 1100px;
 }
 .wrapper nav{
@@ -98,12 +113,6 @@ body{
   border: 2px solid #95bfec;
   transition: all 0.3s ease;
 }
-.items span.active,
-.items span:hover{
-  color: #fff;
-  background: #646c5f;
-}
-
 .gallery{
   display: flex;
   flex-wrap: wrap;
@@ -123,38 +132,6 @@ body{
 }
 .gallery .image.show{
   animation: animate 0.4s ease;
-}
-
-.details .title{
-  display: flex;
-  font-size: 18px;
-  font-weight: 400;
-}
-.details .title p{
-  font-weight: 500;
-  margin-left: 5px;
-}
-.details .icon{
-  color: #007bff;
-  font-style: 22px;
-  cursor: pointer;
-}
-.image-box img{
-  width: 100%;
-  border-radius: 0 0 3px 3px;
-}
-.shadow{
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 2;
-  display: none;
-  background: rgba(0,0,0,0.4);
-}
-.shadow.show{
-  display: block;
 }
 
 @media (max-width: 1000px) {
@@ -188,6 +165,31 @@ body{
   }
   .gallery .image{
     width: 100%;
+  }
+  .gallery .image #box{
+    width: 520px;
+  };
+  .content .text
+  {
+  font-weight: 500;
+  font-size: 35px;
+  letter-spacing: 1px;
+  }
+}
+@media (max-width: 500px) {
+  .content .text
+  {
+  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: 1px;
+  }
+}
+@media (max-width: 280px) {
+  .content .text
+  {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 1px;
   }
 }
 
